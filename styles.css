@@ -1,0 +1,398 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #000; /* Black background */
+  color: #fff;      /* White text */
+  position: relative;
+  z-index: 0;       
+  --size: 0;        /* Default gradient size for cursor effect */
+}
+
+/* Cursor-following gradient behind content */
+body::before {
+  content: "";
+  position: fixed;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #7540608e, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Increase the gradient size on hover (optional) */
+body:hover::before {
+  --size: 500px; 
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #000; /* black */
+  box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo img {
+  height: 50px;
+  /* Optional: vertical-align or margin for better alignment */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 550;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #754060; /* highlight color */
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  background: url('your-image.jpg') center/cover no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #fff; /* ensure text is white on a dark background */
+}
+
+/* Gradient-shifting text animation on the hero H1 */
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+  background: linear-gradient(200deg, #3A1C71, #D76D77, #FFAF7B);
+  /* Show more of the gradient at once: */
+  background-size: 60% 60%; /* was 600% 600% */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite; /* Adjust speed if you like */
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+/* Social buttons in hero */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #8d4670;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #8d4670;
+  background: #00000033;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-btn:hover {
+  background: #00000033;
+  transform: translateY(-2px);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.4; /* optional, for improved readability */
+}
+
+
+.about-section h2 {
+  text-align: left !important;
+}
+
+.about-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-visual img {
+  max-width: 80%;
+  margin-left: 4rem;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Skills Section Container */
+.skills-section {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.skills-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+}
+
+/* Grid Layout: 4 columns per row */
+.skills-grid {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2em;
+  margin-top: 1.5rem;
+}
+
+
+/* Each Skill Item: Contains the square and the label */
+.skill-item {
+  text-align: center;
+}
+
+/* Square Box for the Skill Logo */
+.skill-square {
+  width: 80px;             /* Adjust as needed */
+  height: 80px;
+  background: #75406089;     /* Background color for the box */
+  border-radius: 14px;      /* Remove or adjust for square corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin: 0 auto;          /* Center the square in the grid cell */
+  margin-bottom: 0.5rem;
+}
+
+.skill-square:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: #000;
+}
+
+/* Logo Image Inside the Square */
+.skill-square img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+/* Skill Name Below the Square */
+.skill-name {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  color: #fff;
+}
+
+
+
+
+/* PROJECTS SECTION */
+.projects-section {
+  max-width: 1200px;        /* Optional: keep rows within a max width */
+  margin: 0 auto;
+  text-align: left;
+}
+
+.projects-section h2 {
+  font-size: 3rem;
+  text-align: left !important;
+  margin-bottom: 2rem;
+  color: #fff;              /* Adjust to match your site theme */
+}
+
+/* Each project row */
+.project-item {
+  position: relative;       /* So the image & text can overlay */
+  margin-bottom: 2rem;      /* Spacing between projects */
+  border-radius: 30px;
+  overflow: hidden;         /* Ensures corners are clipped for the image */
+  min-height: 300px;        /* You can adjust the minimum row height */
+  display: flex;
+  align-items: center;      /* Centers text vertically */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+}
+
+/* Slight zoom on hover */
+.project-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* The full-background image */
+.project-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* Crops nicely to fill entire container */
+  object-position: center;  /* Centers the image within the row */
+}
+
+/* The text overlay container */
+.project-content {
+  position: relative;       /* Sits above the image (z-index is implied) */
+  z-index: 1;
+  color: #fff;
+  padding: 2rem;
+  max-width: 50%;           /* Keep text from stretching the full width */
+  /* Optional: a semi-transparent background behind text for readability */
+  border-radius: 8px;       /* So the overlay corners are rounded too */
+}
+
+.project-content h3 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Project link/button */
+.project-content a {
+  display: inline-block;
+  text-decoration: none;
+  color: #00bfff;
+  font-weight: bold;
+  border-bottom: 1px dashed #00bfff;
+  transition: color 0.3s ease;
+}
+
+.project-content a:hover {
+  color: #008abf;
+}
+
+/* Responsive: stack text if the screen is narrow */
+@media (max-width: 768px) {
+  .project-content {
+    max-width: 100%; /* Let the text area expand on small screens */
+  }
+}
+
+.footer {
+  color: #fff;            /* White text */
+  text-align: center;     /* Center the text horizontally */
+  padding: 2rem 0;        /* Vertical padding for some breathing room */
+}
+
+.footer-bottom p {
+  margin: 0;              /* Remove default paragraph margin */
+  font-size: 0.9rem;      /* Slightly smaller text */
+  opacity: 0.8;           /* Subtle transparency if you like */
+}
+
+
+
+/* ACTIVE LINK HIGHLIGHT */
+.nav-links a.active-link {
+  color: #754060;
+  font-weight: bold;
+  border-bottom: 2px solid #754060;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
