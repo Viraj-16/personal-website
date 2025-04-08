@@ -8,11 +8,11 @@
 /* BODY */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #000; /* Black background */
-  color: #fff;      /* White text */
+  background: #000; 
+  color: #fff;   
   position: relative;
   z-index: 0;       
-  --size: 0;        /* Default gradient size for cursor effect */
+  --size: 0;       
 }
 
 /* Cursor-following gradient behind content */
@@ -41,7 +41,7 @@ body:hover::before {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #000; /* black */
+  background: #000; 
   box-shadow: 0 2px 4px rgba(255,255,255,0.1);
   position: sticky;
   top: 0;
@@ -49,7 +49,6 @@ body:hover::before {
 }
 .logo img {
   height: 50px;
-  /* Optional: vertical-align or margin for better alignment */
 }
 
 .nav-links {
@@ -69,7 +68,7 @@ body:hover::before {
 }
 
 .nav-links a:hover {
-  color: #754060; /* highlight color */
+  color: #754060;
 }
 
 /* HERO */
@@ -79,7 +78,7 @@ body:hover::before {
   background: url('your-image.jpg') center/cover no-repeat;
   background-size: cover;
   position: relative;
-  color: #fff; /* ensure text is white on a dark background */
+  color: #fff;
 }
 
 /* Gradient-shifting text animation on the hero H1 */
@@ -89,10 +88,10 @@ body:hover::before {
   z-index: 1;
   background: linear-gradient(200deg, #3A1C71, #D76D77, #FFAF7B);
   /* Show more of the gradient at once: */
-  background-size: 60% 60%; /* was 600% 600% */
+  background-size: 60% 60%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientShift 8s ease infinite; /* Adjust speed if you like */
+  animation: gradientShift 8s ease infinite; /*speed*/
 }
 
 @keyframes gradientShift {
@@ -175,7 +174,7 @@ body:hover::before {
 .about-text p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  line-height: 1.4; /* optional, for improved readability */
+  line-height: 1.4; 
 }
 
 
@@ -191,12 +190,13 @@ body:hover::before {
 }
 
 .about-visual img {
-  max-width: 80%;
-  margin-left: 4rem;
-  height: auto;
+  max-width: 100%;
+  width: 300px; 
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 
 /* Skills Section Container */
 .skills-section {
@@ -227,17 +227,17 @@ body:hover::before {
 
 /* Square Box for the Skill Logo */
 .skill-square {
-  width: 80px;             /* Adjust as needed */
+  width: 80px;           
   height: 80px;
-  background: #75406089;     /* Background color for the box */
-  border-radius: 14px;      /* Remove or adjust for square corners */
+  background: #75406089;     
+  border-radius: 14px;  
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  margin: 0 auto;          /* Center the square in the grid cell */
+  margin: 0 auto;        
   margin-bottom: 0.5rem;
 }
 
@@ -267,7 +267,7 @@ body:hover::before {
 
 /* PROJECTS SECTION */
 .projects-section {
-  max-width: 1200px;        /* Optional: keep rows within a max width */
+  max-width: 1200px;      
   margin: 0 auto;
   text-align: left;
 }
@@ -276,19 +276,19 @@ body:hover::before {
   font-size: 3rem;
   text-align: left !important;
   margin-bottom: 2rem;
-  color: #fff;              /* Adjust to match your site theme */
+  color: #fff;              
 }
 
 /* Each project row */
 .project-item {
-  position: relative;       /* So the image & text can overlay */
-  margin-bottom: 2rem;      /* Spacing between projects */
+  position: relative;      
+  margin-bottom: 2rem;     
   border-radius: 30px;
-  overflow: hidden;         /* Ensures corners are clipped for the image */
-  min-height: 300px;        /* You can adjust the minimum row height */
+  overflow: hidden;         
+  min-height: 300px;      
   display: flex;
-  align-items: center;      /* Centers text vertically */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+  align-items: center;    
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Slight zoom on hover */
@@ -304,19 +304,18 @@ body:hover::before {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* Crops nicely to fill entire container */
-  object-position: center;  /* Centers the image within the row */
+  object-fit: cover;      
+  object-position: center; 
 }
 
 /* The text overlay container */
 .project-content {
-  position: relative;       /* Sits above the image (z-index is implied) */
+  position: relative;      
   z-index: 1;
   color: #fff;
   padding: 2rem;
-  max-width: 50%;           /* Keep text from stretching the full width */
-  /* Optional: a semi-transparent background behind text for readability */
-  border-radius: 8px;       /* So the overlay corners are rounded too */
+  max-width: 50%;          
+  border-radius: 8px;       
 }
 
 .project-content h3 {
@@ -347,20 +346,20 @@ body:hover::before {
 /* Responsive: stack text if the screen is narrow */
 @media (max-width: 768px) {
   .project-content {
-    max-width: 100%; /* Let the text area expand on small screens */
+    max-width: 100%; 
   }
 }
 
 .footer {
-  color: #fff;            /* White text */
-  text-align: center;     /* Center the text horizontally */
-  padding: 2rem 0;        /* Vertical padding for some breathing room */
+  color: #fff;          
+  text-align: center;   
+  padding: 2rem 0;       
 }
 
 .footer-bottom p {
-  margin: 0;              /* Remove default paragraph margin */
-  font-size: 0.9rem;      /* Slightly smaller text */
-  opacity: 0.8;           /* Subtle transparency if you like */
+  margin: 0;           
+  font-size: 0.9rem;    
+  opacity: 0.8;        
 }
 
 
