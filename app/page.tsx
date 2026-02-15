@@ -120,13 +120,13 @@ export default function Home() {
 				<p>I’m passionate about designing intelligent systems, building scalable full-stack applications, and solving complex problems through clean, efficient code. From developing AI-powered tools to building real-time backend systems, I enjoy turning ideas into impactful products.</p>
         <p>Beyond coding and building systems, I enjoy travelling, discovering new cultures, and staying active through sports and the gym. These experiences fuel my curiosity, sharpen my competitive edge, and push me to keep improving, whether I’m in the gym or solving a tough technical challenge.</p>
 				<div className="contact-links">
-					<a href="#" className="contact-button">
+					<a href="https://www.linkedin.com/in/viraj0119/" className="contact-button">
 						LinkedIn
 					</a>
-					<a href="#" className="contact-button">
+					<a href="https://github.com/Viraj-16" className="contact-button">
 						GitHub
 					</a>
-					<a href="#" className="contact-button">
+					<a href="mailto:340viraj@gmail.com" className="contact-button">
 						Email
 					</a>
 				</div>
